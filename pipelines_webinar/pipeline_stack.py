@@ -18,7 +18,7 @@ class PipelineStack(core.Stack):
                 output= source_artifact,
                 oauth_token= core.SecretValue.secrets_manager('github-token'),
                 owner='JuanGQCadavid',
-                repo='cdkPipeline',
+                repo='cdkAwsPipe',
                 trigger=cpactions.GitHubTrigger.POLL),
             synth_action= pipelines.SimpleSynthAction(
                 source_artifact=source_artifact,
