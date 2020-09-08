@@ -10,13 +10,13 @@ class PipelineStack(core.Stack):
         source_artifact = codepipeline.Artifact()
         cloud_assembly_artifact = codepipeline.Artifact()
 
-        pipelines.CdkPipeline(self, 'Pipeline',
+        pipelines.CdkPipeline(self, 'PipelineToy',
             cloud_assembly_artifact=cloud_assembly_artifact,
             pipeline_name='WebinarPipeline',
             source_action= cpactions.GitHubSourceAction(
                 action_name='Github',
                 output= source_artifact,
-                oauth_token= core.SecretValue.secrets_manager('github-token'),
+                oauth_token= core.SecretValue.secrets_manager('GitHub_cdk_workshop'),
                 owner='JuanGQCadavid',
                 repo='cdkAwsPipe',
                 trigger=cpactions.GitHubTrigger.POLL),

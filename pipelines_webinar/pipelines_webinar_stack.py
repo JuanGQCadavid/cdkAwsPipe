@@ -10,7 +10,7 @@ class PipelinesWebinarStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         this_dir = path.dirname(__file__)
-        handler = lmb.Function(self,'handler', 
+        handler = lmb.Function(self,'handlerPipe', 
                 runtime=lmb.Runtime.PYTHON_3_7, 
                 handler='handler.handler', 
                 code=lmb.Code.from_asset(path.join(this_dir, 'lambda')))
